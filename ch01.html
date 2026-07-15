@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1장. 티어 시스템과 경쟁전의 구조 — 왜 대부분 여기서 멈추는가 · MRI ACADEMY</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#0a0a0c;--card:#141417;--line:#26262b;--gold:#f5c518;--gold-soft:rgba(245,197,24,.3);--ink:#ededf0;--dim:#a8a8b0;--faint:#6b6b73}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 100px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:clamp(24px,4.5vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin:8px 0 22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h2{font-size:20px;font-weight:800;color:var(--gold);margin:34px 0 12px}
+h3{font-size:16px;font-weight:800;margin:24px 0 8px}
+p{margin:14px 0;color:var(--dim)}
+strong,b{color:var(--ink);font-weight:700}
+ul,ol{margin:14px 0 14px 22px;color:var(--dim)}li{margin:6px 0}
+blockquote{margin:20px 0;padding:16px 18px;background:var(--card);border:1px solid var(--gold-soft);border-radius:12px;border-left:3px solid var(--gold)}
+blockquote p{margin:6px 0;color:var(--ink)}
+blockquote strong{color:var(--gold)}
+hr{border:none;border-top:1px solid var(--line);margin:28px 0}
+.kick{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.ph{display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;text-align:center;background:var(--card);border:1px dashed var(--gold-soft);border-radius:12px;padding:26px 18px;margin:20px 0}
+.ph-tag{font-weight:800;color:var(--gold);font-size:13px}
+.ph-cap{color:var(--faint);font-size:12.5px;max-width:520px}
+.toc{list-style:none;margin:24px 0 0;padding:0}
+.toc li{margin:0 0 10px;padding:0}
+.toc a{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink);font-weight:700}
+.toc a:hover{border-color:var(--gold-soft);text-decoration:none}
+.toc .lock{background:transparent;border-style:dashed;color:var(--faint);cursor:default}
+.toc .lock:hover{border-color:var(--line)}
+.toc .badge{margin-left:auto;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px}
+.toc .badge.free{color:#0a0a0c;background:var(--gold)}
+.toc .badge.paid{color:var(--faint);border:1px solid var(--line)}
+.pager{display:flex;justify-content:space-between;margin-top:44px;gap:12px;border-top:1px solid var(--line);padding-top:20px}
+.pager a{font-weight:700}
+.buy{background:linear-gradient(135deg,rgba(245,197,24,.1),transparent);border:1px solid var(--gold-soft);border-radius:14px;padding:22px;margin:32px 0;text-align:center}
+.buy h3{color:var(--gold)}
+.btn{display:inline-block;margin-top:12px;background:var(--gold);color:#0a0a0c;font-weight:800;padding:12px 24px;border-radius:9px}
+.foot{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--faint);font-size:12px;text-align:center}
+</style></head><body><div class="wrap"><div class="kick"><a href="index.html">MRI ACADEMY 전자책</a></div><h1>1장. 티어 시스템과 경쟁전의 구조 — 왜 대부분 여기서 멈추는가</h1>
+<h2>이 장에서 얻는 것</h2>
+<ul>
+<li>서바이버 달성 조건과 점수 구조를 정확히 안다</li>
+<li>티어 구간마다 점수가 오르는 방식이 어떻게 바뀌는지 안다</li>
+<li>플래티넘~다이아에서 성장이 멈추는 구조적 이유를 이해한다</li>
+</ul>
+<h2>서바이버의 실제 조건</h2>
+<p>조건부터 정확히 하자. 서바이버는 솔로·듀오·스쿼드 경쟁전 점수를 통합해 3,700점 이상, 동시에 실시간 200등 이내여야 달성된다. 점수를 채우는 것으로 끝나지 않는다. 서버 전체에서 상위 200명 안에 들어 있어야 한다. 내가 시즌 42에서 이 조건을 채우는 데 걸린 시간은 10~11일이었다. 하루 4시간짜리 솔로 경쟁전만으로.</p>
+<p>이 숫자가 중요한 이유는 따로 있다. 3,700이라는 목표를 구간별로 쪼개 보면, 티어마다 게임이 요구하는 플레이가 완전히 다르다는 게 드러난다.</p>
+<h2>점수가 오르는 방식은 구간마다 다르다</h2>
+<p>다이아 미만 구간에서는 순위 방어만 잘해도 점수가 오른다. 죽지 않고 버티면 게임이 점수를 준다. 그래서 이 구간의 성장은 빠르고, 별다른 교전 없이도 그래프는 우상향한다.</p>
+<p>문제는 이 성공 경험이 습관이 된다는 것이다. &quot;버티면 오른다&quot;가 몸에 새겨진 채로 다이아에 진입한다.</p>
+<p>다이아·마스터 구간부터 요구치가 바뀐다. 킬 점수가 기하급수적으로 필요해진다. 3,500점부터는 치킨을 먹어도 0킬이면 점수가 오르지 않는다. 생존의 끝까지 갔는데 보상이 없다 — 게임이 보내는 신호는 명확하다. 이 구간부터는 살아남는 능력이 아니라 킬을 만들어내는 능력을 평가하겠다는 것이다.</p>
+<p>게임이 요구하는 플레이는 바뀌었는데 플레이어는 바뀌지 않는다. 그게 벽의 정체다. 플래티넘~다이아 초입에서 멈추는 사람은 실력이 모자란 게 아니라, 아래 구간에서 통했던 방식을 위 구간에 그대로 들고 올라온 것이다.</p>
+<h2>그래서 상위 구간의 판단 기준</h2>
+<p>3,500 이상에서 내 기준은 이랬다. 필요하지 않은 교전이라도 자리 우위가 명확하면 리스크를 감수하고 들어가 킬 포인트를 확보한다.</p>
+<p>핵심은 뒷부분이 아니라 앞부분이다 — &quot;자리 우위가 명확하면&quot;. 아무 교전이나 늘리라는 말이 아니다. 킬을 강요받는 구간에서조차 교전의 전제는 자리다. 그리고 그 자리가 어디서 오는지가 이 책 전체의 주제다. <strong>1~3페이즈는 4페이즈 빌드업 자리 탈환 과정일 뿐이다. 4페이즈 자리가 치킨을 결정한다.</strong> 킬 점수도 마찬가지다 — 좋은 자리가 좋은 교전을 만들고, 좋은 교전이 킬 포인트가 된다.</p>
+<p>다음 장부터는 그 자리를 만드는 과정을 시작 지점부터 따라간다. 세팅, 드랍, 그리고 4페이즈까지.</p>
+<h2>실전 체크리스트</h2>
+<ul>
+<li>내 현재 구간은 어디인가 — 다이아 이상이면 킬 포인트 비중을 의식적으로 높인다</li>
+<li>3,500 이상에서 0킬 치킨을 반복하고 있지 않은가 — 자리 우위 교전을 추가로 검토한다</li>
+<li>매 판 종료 후 순위 점수와 킬 점수의 비율을 확인한다 — 킬 비중이 늘지 않으면 정체 신호다</li>
+</ul>
+<h2>흔한 실수 TOP3</h2>
+<ol>
+<li>다이아 구간에서도 아래 구간의 습관대로 순위 방어 위주로만 플레이한다</li>
+<li>3,500 이상에서 0킬 치킨을 반복하며 &quot;잘했는데 왜 안 오르지&quot;를 되풀이한다</li>
+<li>불리한 교전을 피하는 것과 모든 교전을 피하는 것을 혼동해, 4페이즈 자리 경쟁에서 밀린다</li>
+</ol>
+<hr>
+<p>전체판 PDF 런칭가 19,000원 (초판 한정, 이후 인상 예정) · MRI ACADEMY 수강 등록 시 전액 차감(실질 0원)
+→ <a href="https://mriacademy.gg/apply.html?utm_source=ebook&amp;utm_medium=web&amp;utm_content=ch01">https://mriacademy.gg/apply.html?utm_source=ebook&amp;utm_medium=web&amp;utm_content=ch01</a></p>
+<div class="pager"><span><a href="intro.html">← 서문 — 10일</a></span><span><a href="ch02.html">2장. 세팅 — 먼저 보는 눈과 먼저 듣는 귀 →</a></span></div><div class="foot">© 2026 MRI ACADEMY · 무리(GmI) — 솔로 경쟁전 단독 서바이버<br>무단 복제·재배포 금지</div></div></body></html>
